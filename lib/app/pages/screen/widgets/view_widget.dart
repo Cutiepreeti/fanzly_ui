@@ -1,6 +1,6 @@
 import 'package:fanzly_screen/app/app.dart';
+import 'package:fanzly_screen/app/pages/screen/widgets/example.dart';
 import 'package:flutter/material.dart';
-
 
 class ViewWidget extends StatelessWidget {
   const ViewWidget({Key? key}) : super(key: key);
@@ -8,9 +8,58 @@ class ViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      shrinkWrap: true,
       children: [
         Stack(
           children: [
+            /// Background Image
+            Container(
+              height: Dimens.twoTwenty,
+              width: Dimens.fourHundred,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/girl1.jpg'),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.topLeft,
+              child: IconButton(
+                onPressed: () {},
+                icon:
+                const Icon(Icons.arrow_back, color: Colorsvalue.whiteColor),
+              ),
+            ),
+            Align(
+              alignment: Alignment.topRight,
+              child: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.menu, color: Colorsvalue.whiteColor),
+              ),
+            ),
+
+            /// Profile Image Positioned
+            Positioned(
+              bottom: Dimens.ten,
+              left: Dimens.six,
+              child: Container(
+                height: Dimens.eighty,
+                width: Dimens.hundred,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: const DecorationImage(
+                    image: AssetImage('images/girl2.jpg'),
+                  ),
+                  border: Border.all(
+                    color: Colorsvalue.primaryColor,
+                    width: Dimens.two,
+                  ),
+                ),
+              ),
+            ),
+
+            /// Edit Profile Button
             Container(
               //color: Colors.red,
               height: Dimens.twoHundredEighty,
@@ -37,7 +86,8 @@ class ViewWidget extends StatelessWidget {
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(Dimens.thirty),
-                          side: const BorderSide(color: Colorsvalue.borderGreyColor),
+                          side: const BorderSide(
+                              color: Colorsvalue.borderGreyColor),
                         )),
                       ),
                     ),
@@ -57,59 +107,18 @@ class ViewWidget extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              height: Dimens.twoTwenty,
-              width: Dimens.fourHundred,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('images/girl1.jpg'),
-                  fit: BoxFit.fill,
-                ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: IconButton(
-                onPressed: () {},
-                icon:
-                    const Icon(Icons.arrow_back, color: Colorsvalue.whiteColor),
-              ),
-            ),
-            Align(
-              alignment: Alignment.topRight,
-              child: IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.menu, color: Colorsvalue.whiteColor),
-              ),
-            ),
-            Positioned(
-              bottom: Dimens.ten,
-              left: Dimens.six,
-              child: Container(
-                height: Dimens.eighty,
-                width: Dimens.hundred,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: const DecorationImage(
-                    image: AssetImage('images/girl2.jpg'),
-                  ),
-                  border: Border.all(
-                    color: Colorsvalue.primaryColor,
-                    width: Dimens.two,
-                  ),
-                ),
-              ),
-            ),
+
           ],
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+
             Padding(
               padding: Dimens.edgeInsets15_10,
               child: Row(
                 children: [
-                   Text(
+                  Text(
                     'Natasha',
                     style: Styles.primaryText16,
                   ),
@@ -118,13 +127,14 @@ class ViewWidget extends StatelessWidget {
                     radius: Dimens.ten,
                     backgroundColor: Colorsvalue.primaryColor,
                     child: Icon(Icons.save,
-                        size: Dimens.seventeen,
-                        color: Colorsvalue.whiteColor),
+                        size: Dimens.seventeen, color: Colorsvalue.whiteColor),
                   ),
                 ],
               ),
             ),
             Dimens.boxHeight10,
+
+            /// Natasha Active Text
             Padding(
               padding: Dimens.edgeInsets15,
               child: Text(
@@ -133,41 +143,45 @@ class ViewWidget extends StatelessWidget {
               ),
             ),
             Dimens.boxHeight10,
+
+            /// Posts,Followers,Followings
             Padding(
               padding: Dimens.edgeInsets15,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                 Text('32',
+              child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
+                Text(
+                  '32',
                   style: Styles.primaryText32,
                 ),
                 Dimens.boxWidth5,
-                 Text('Posts',style: Styles.primaryTextPosts),
+                Text('Posts', style: Styles.primaryTextPosts),
                 Dimens.boxWidth5,
-                 Text('15',
+                Text(
+                  '15',
                   style: Styles.primaryText32,
                 ),
                 Dimens.boxWidth5,
-                 Text('Followers',style: Styles.primaryTextPosts),
-               Dimens.boxWidth5,
-                Text('20',
+                Text('Followers', style: Styles.primaryTextPosts),
+                Dimens.boxWidth5,
+                Text(
+                  '20',
                   style: Styles.primaryText32,
                 ),
                 Dimens.boxWidth5,
-                 Text('Followings',style: Styles.primaryTextPosts),
+                Text('Followings', style: Styles.primaryTextPosts),
               ]),
             ),
-           Dimens.boxHeight20,
+            Dimens.boxHeight20,
+
+            ///Hi Everyone
             Padding(
               padding: Dimens.edgeInsets15,
-              child: Text(
-                'Hii everyone...',
-                style: Styles.primaryTextHi
-              ),
+              child: Text('Hii everyone...', style: Styles.primaryTextHi),
             ),
             Dimens.boxHeight25,
+
+            /// Social Media Icons,
             Padding(
-              padding:Dimens.edgeInsets15_100,
+              padding: Dimens.edgeInsets15_100,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
@@ -190,6 +204,8 @@ class ViewWidget extends StatelessWidget {
               ),
             ),
             Dimens.boxHeight20,
+
+            /// New Container
             Padding(
               padding: Dimens.edgeInsets15,
               child: Row(
@@ -214,6 +230,8 @@ class ViewWidget extends StatelessWidget {
                       const Text('New'),
                     ],
                   ),
+
+                  /// Lists
                   Dimens.boxWidth10,
                   Container(
                     height: Dimens.hundred,
@@ -231,7 +249,7 @@ class ViewWidget extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(Dimens.ten),
                                 //color: Colors.red,
                                 image: const DecorationImage(
-                                    image: AssetImage('images/girl5.jpg'),
+                                  image: AssetImage('images/girl5.jpg'),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -249,6 +267,9 @@ class ViewWidget extends StatelessWidget {
               ),
             ),
             Dimens.boxHeight10,
+
+           /// TabBar
+
             Container(
               height: 1200,
               width: 1000,
@@ -265,20 +286,19 @@ class ViewWidget extends StatelessWidget {
                       padding: Dimens.edgeInsets4_4,
                       tabs: const [
                         Tab(icon: Icon(Icons.grid_view)),
-                        Tab(icon:Icon(Icons.play_circle_outline)),
-                        Tab(icon:Icon(Icons.lock_outline)),
-                        Tab(icon:Icon(Icons.local_offer_outlined)),
+                        Tab(icon: Icon(Icons.play_circle_outline)),
+                        Tab(icon: Icon(Icons.lock_outline)),
+                        Tab(icon: Icon(Icons.local_offer_outlined)),
                       ],
                     ),
                   ),
-                  body: const TabBarView(
+                  body:  TabBarView(
                     physics: AlwaysScrollableScrollPhysics(),
                     children: [
                       GridTabWidget(),
                       PlayCircleTab(),
                       LockTab(),
-                      Text('Oops..Nothing To Show'),
-
+                      Example(),
                     ],
                   ),
                   // Icon(Icons.grid_view),

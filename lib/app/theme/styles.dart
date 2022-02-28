@@ -33,38 +33,38 @@ abstract class Styles {
   );
 
   static TextStyle primaryTextHi = GoogleFonts.poppins(
-          fontWeight: FontWeight.w400,
-          color: Colorsvalue.hiEveryone,
-          fontSize: Dimens.fourteen,
+    fontWeight: FontWeight.w400,
+    color: Colorsvalue.hiEveryone,
+    fontSize: Dimens.fourteen,
   );
 
-  static TextStyle primaryColorFollow = TextStyle(
+  static TextStyle primaryColorFollow = const TextStyle(
     color: Colorsvalue.primaryColor,
   );
 
-  static TextStyle jennyJaneText = TextStyle(
+  static TextStyle jennyJaneText = const TextStyle(
     fontFamily: 'Avenir',
     fontWeight: FontWeight.w600,
     color: Colorsvalue.janeColor,
   );
 
-  static TextStyle zoyaText = TextStyle(
+  static TextStyle zoyaText = const TextStyle(
     fontFamily: 'Avenir',
     color: Colorsvalue.primaryColor,
     fontWeight: FontWeight.w400,
   );
 
-  static TextStyle doubleText = TextStyle(
+  static TextStyle doubleText = const TextStyle(
     fontFamily: 'Avenir',
     fontWeight: FontWeight.w400,
   );
 
-  static TextStyle tipsText = TextStyle(
+  static TextStyle tipsText = const TextStyle(
     fontFamily: 'Avenir',
     fontWeight: FontWeight.w700,
   );
 
-  static TextStyle sendTipText = TextStyle(
-      color: Colorsvalue.whiteColor,
-      );
+  static TextStyle sendTipText = const TextStyle(
+    color: Colorsvalue.whiteColor,
+  );
 }

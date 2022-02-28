@@ -14,31 +14,35 @@ class PlayCircleTab extends StatelessWidget {
           backgroundColor: Colorsvalue.whiteColor,
           bottom: const TabBar(
             unselectedLabelColor: Colorsvalue.tabBarIconColor,
-              indicatorColor: Colorsvalue.primaryColor,
-              labelColor: Colorsvalue.primaryColor,
-              tabs:[
-                Tab(text: "Upcoming streams",),
-                Tab(text: "Past streams",),
-              ],
+            indicatorColor: Colorsvalue.primaryColor,
+            labelColor: Colorsvalue.primaryColor,
+            tabs: [
+              Tab(
+                text: "Upcoming streams",
+              ),
+              Tab(
+                text: "Past streams",
+              ),
+            ],
           ),
         ),
-      body: TabBarView(
-          children:[
+        body: TabBarView(
+          children: [
             GridView.builder(
-               itemCount: 6,
-              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              //itemCount: 6,
+              //physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 5.0,
                 mainAxisSpacing: 5.0,
-                childAspectRatio: (9/14),
+                childAspectRatio: (9 / 14),
               ),
-              itemBuilder: (BuildContext context, int index)
-              {
+              itemBuilder: (BuildContext context, int index) {
                 return Stack(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(4.0),
+                      padding: Dimens.edgeInsets4,
                       child: Container(
                         //margin: Dimens.edgeInsets8,
                         decoration: BoxDecoration(
@@ -46,23 +50,25 @@ class PlayCircleTab extends StatelessWidget {
                           image: DecorationImage(
                             image: AssetImage('images/girl6.jpg'),
                             fit: BoxFit.cover,
-                          ) ,
+                          ),
                         ),
                       ),
                     ),
                     Positioned(
-                      top: 15,
-                      left: 15,
+                      top: Dimens.fifteen,
+                      left: Dimens.fifteen,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           primary: Colorsvalue.primaryColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(Dimens.twenty),
                           ),
-                          minimumSize: Size(Dimens.oneHundredFifty, Dimens.fourty),
-                          maximumSize: Size(Dimens.oneHundredFifty, Dimens.fourty),
+                          minimumSize:
+                              Size(Dimens.oneHundredFifty, Dimens.fourty),
+                          maximumSize:
+                              Size(Dimens.oneHundredFifty, Dimens.fourty),
                         ),
-                        onPressed: (){},
+                        onPressed: () {},
                         child: Row(
                           children: [
                             Text('Go Live'),
@@ -70,7 +76,8 @@ class PlayCircleTab extends StatelessWidget {
                             Container(
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                border: Border.all(color: Colorsvalue.whiteColor),
+                                border:
+                                    Border.all(color: Colorsvalue.whiteColor),
                                 color: Colorsvalue.tabBarIconColor,
                               ),
                               child: Icon(Icons.chevron_right_outlined,
@@ -85,11 +92,11 @@ class PlayCircleTab extends StatelessWidget {
                       left: Dimens.fifteen,
                       child: Row(
                         children: [
-                          Icon(Icons.schedule,color: Colorsvalue.whiteColor),
+                          Icon(Icons.schedule, color: Colorsvalue.whiteColor),
                           Dimens.boxWidth5,
-                          Text('1day 1hr 20min',style: TextStyle(
-                            color: Colors.white,
-                          ),
+                          Text(
+                            '1day 1hr 20min',
+                            style: Styles.sendTipText,
                           ),
                         ],
                       ),
@@ -100,30 +107,28 @@ class PlayCircleTab extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            height: 30,
-                            width: 30,
+                            height: Dimens.thirty,
+                            width: Dimens.thirty,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                 image: AssetImage('images/girl7.jpg'),
                                 fit: BoxFit.cover,
                               ),
-                              border: Border.all(color:Colorsvalue.whiteColor),
+                              border: Border.all(color: Colorsvalue.whiteColor),
                             ),
                           ),
                           Dimens.boxWidth5,
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('@nathasa',
-                                style: TextStyle(
-                                  color: Colorsvalue.whiteColor,
-                                ),
+                              Text(
+                                '@nathasa',
+                                style: Styles.sendTipText,
                               ),
-                              Text('come watch my live',
-                                style: TextStyle(
-                                  color: Colorsvalue.whiteColor,
-                                ),
+                              Text(
+                                'come watch my live',
+                                style: Styles.sendTipText,
                               ),
                             ],
                           ),
@@ -134,38 +139,41 @@ class PlayCircleTab extends StatelessWidget {
                       bottom: Dimens.fifteen,
                       left: Dimens.fifteen,
                       child: Row(
-                         //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color:Colorsvalue.playDeleteIconColor,
+                              color: Colorsvalue.playDeleteIconColor,
                             ),
                             child: Padding(
                               padding: Dimens.edgeInsets8,
-                              child: Icon(Icons.delete,color: Colorsvalue.whiteColor),
+                              child: Icon(Icons.delete,
+                                  color: Colorsvalue.whiteColor),
                             ),
                           ),
                           Dimens.boxWidth15,
                           Container(
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color:Colorsvalue.playDeleteIconColor,
+                              color: Colorsvalue.playDeleteIconColor,
                             ),
                             child: Padding(
                               padding: Dimens.edgeInsets8,
-                              child: Icon(Icons.ios_share_outlined,color: Colorsvalue.whiteColor),
+                              child: Icon(Icons.ios_share_outlined,
+                                  color: Colorsvalue.whiteColor),
                             ),
                           ),
                           Dimens.boxWidth15,
                           Container(
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color:Colorsvalue.playDeleteIconColor,
+                              color: Colorsvalue.playDeleteIconColor,
                             ),
                             child: Padding(
                               padding: Dimens.edgeInsets8,
-                              child: Icon(Icons.info,color: Colorsvalue.whiteColor),
+                              child: Icon(Icons.info,
+                                  color: Colorsvalue.whiteColor),
                             ),
                           ),
                         ],
@@ -173,9 +181,11 @@ class PlayCircleTab extends StatelessWidget {
                     ),
                   ],
                 );
-              },),
+              },
+            ),
             PlayCirclePastTab(),
-          ] )
+          ],
+        ),
       ),
     );
   }
